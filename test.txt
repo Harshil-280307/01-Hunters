@@ -1,10 +1,1 @@
-done now we get started
-<<<<<<< HEAD
-heloo guys
-Today finally we start basic 
-=======
-now work start  in freelanceng
-Today finally we start basic
-Keep it short: Aim for a few words that are easy to remember. 
->>>>>>> 52a10265a4c93e5b75ac20fea48cec8f61383034
-ok now we go next
+ok done
