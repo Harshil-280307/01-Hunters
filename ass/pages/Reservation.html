@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Reservation.css">
+    <title>Black Moon Cafe - Premium Reservations</title>
+
+</head>
+<body>
+
+    <nav class="navbar-alt">
+        <div class="nav-container">
+            <a href="#home" class="logo-container">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <h1 class="logo-title">BLACK MOON</h1>
+                    <p class="logo-subtitle">CAFE & BISTRO</p>
+                </div>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="#drinks" class="dropdown-item">Coffee & Drinks</a>
+                        <a href="#food" class="dropdown-item">Fast Food</a>
+                        <a href="#desserts" class="dropdown-item">Desserts</a>
+                        <a href="#specials" class="dropdown-item">Daily Specials</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#reservation" class="nav-link">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#offers" class="nav-link">Offers</a>
+                </li>
+                <li class="nav-item">
+                    <button class="cta-button">Order Now</button>
+                </li>
+            </ul>
+            
+            <!-- <button class="mobile-menu-toggle" id="mobile-toggle">☰</button> -->
+        </div>
+    </nav> 
+
+
+<!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    
+    <!-- Floating Particles --> 
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- <div class="main-container"> 
+        <div class="reservation-page"> -->
+            <!-- Header -->
+            <div class="header">
+                <div class="logo">🌙</div>
+                <h1 class="cafe-name">Black Moon Cafe</h1>
+                <p class="tagline">Where Night Meets Culinary Excellence</p>
+                <p class="subtitle">Experience an extraordinary evening of fine dining in our award-winning restaurant. Reserve your table for an unforgettable culinary journey.</p>
+            </div>
+
+            <!-- Information Section -->
+            <div class="info-section">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📍 Location & Hours</h3>
+                        <div class="info-item">
+                            <span class="info-icon">🏢</span>
+                            <span>123 Moonlight Avenue, Downtown District</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🕐</span>
+                            <span>Tuesday - Sunday: 5:00 PM - 2:00 AM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🚫</span>
+                            <span>Closed Mondays for Private Events</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🅿️</span>
+                            <span>Complimentary Valet Parking</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📞 Contact & Support</h3>
+                        <div class="info-item">
+                            <span class="info-icon">📱</span>
+                            <span>Reservations: (555) 123-MOON</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📧</span>
+                            <span>reservations@blackmooncafe.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">💬</span>
+                            <span>WhatsApp: (555) 123-6666</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🌐</span>
+                            <span>www.blackmooncafe.com</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>ℹ️ Dining Policies</h3>
+                        <div class="info-item">
+                            <span class="info-icon">⏰</span>
+                            <span>Tables held for 15 minutes past reservation</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">👔</span>
+                            <span>Smart casual to formal dress code</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🍼</span>
+                            <span>Children welcome until 9:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🎭</span>
+                            <span>Private dining rooms available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservation Form -->
+            <div class="form-section">
+                <h2 class="form-title">Reserve Your Table</h2>
+                <p class="form-subtitle">Secure your place for an exceptional dining experience</p>
+                
+                <div class="form-container">
+                    <form id="reservationForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="date">Reservation Date *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <div class="guest-counter">
+                                    <button type="button" class="counter-btn" onclick="changeGuests(-1)">-</button>
+                                    <span class="guest-count" id="guestCount">2</span>
+                                    <button type="button" class="counter-btn" onclick="changeGuests(1)">+</button>
+                                </div>
+                                <input type="hidden" id="guests" name="guests" value="2">
+                            </div>
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+<script>
+    function changeGuests(change) {
+        let countElement = document.getElementById("guestCount");
+        let inputElement = document.getElementById("guests");
+        let count = parseInt(countElement.innerText);
+
+        // Set limits (optional)
+        let minGuests = 1;
+        let maxGuests = 100;
+
+        count += change;
+        if (count < minGuests) count = minGuests;
+        if (count > maxGuests) count = maxGuests;
+
+        countElement.innerText = count;
+        inputElement.value = count;
+    }
+</script>
+
+<!-- --------------------------------------------------------------------------------------------- -->
+                            
+                            <div class="form-group full-width">
+                                <label for="timeSlot">Preferred Time *</label>
+                                <div class="time-grid">
+                                    <div class="time-slot" onclick="selectTime('17:00')">5:00 PM</div>
+                                    <div class="time-slot" onclick="selectTime('17:30')">5:30 PM</div>
+                                    <div class="time-slot" onclick="selectTime('18:00')">6:00 PM</div>
+                                    <div class="time-slot" onclick="selectTime('18:30')">6:30 PM</div>
+                                    <div class="time-slot" onclick="selectTime('19:00')">7:00 PM</div>
+                                    <div class="time-slot" onclick="selectTime('19:30')">7:30 PM</div>
+                                    <div class="time-slot" onclick="selectTime('20:00')">8:00 PM</div>
+                                    <div class="time-slot" onclick="selectTime('20:30')">8:30 PM</div>
+                                    <div class="time-slot" onclick="selectTime('21:00')">9:00 PM</div>
+                                    <div class="time-slot" onclick="selectTime('21:30')">9:30 PM</div>
+                                    <div class="time-slot" onclick="selectTime('22:00')">10:00 PM</div>
+                                    <div class="time-slot" onclick="selectTime('22:30')">10:30 PM</div>
+                                </div>
+                                <input type="hidden" id="timeSlot" name="timeSlot" required>
+                            </div>
+
+<!-- --------------------------------------------------------------------------------------------- -->
+
+<script>
+function selectTime(time) {
+    // Set the value of the hidden input
+    document.getElementById('timeSlot').value = time;
+
+    // Remove "selected" class from all time slots
+    var allSlots = document.querySelectorAll('.time-slot');
+    allSlots.forEach(function(slot) {
+        slot.classList.remove('selected');
+    });
+
+    // Add "selected" class to the clicked time slot
+        var clickedSlot = Array.from(allSlots).find(slot => slot.innerText.includes(formatTime(time)));
+        if (clickedSlot) {
+        clickedSlot.classList.add('selected');
+        }
+    }
+
+  // Helper to format time like "17:00" => "5:00 PM"
+    function formatTime(time24)
+    {
+        const [hour, minute] = time24.split(':');
+        let h = parseInt(hour);
+        const suffix = h >= 12 ? 'PM' : 'AM';
+        h = h % 12 || 12;
+        return `${h}:${minute} ${suffix}`;
+    }
+</script>
+
+<!-- --------------------------------------------------------------------------------------------- -->
+                            
+                            <div class="form-group half-width">
+                                <label for="occasion">Special Occasion</label>
+                                <select id="occasion" name="occasion">
+                                    <option value="">Select occasion</option>
+                                    <option value="birthday">Birthday Celebration</option>
+                                    <option value="anniversary">Anniversary</option>
+                                    <option value="proposal">Proposal</option>
+                                    <option value="business">Business Dinner</option>
+                                    <option value="date">Romantic Date</option>
+                                    <option value="celebration">General Celebration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group half-width">
+                                <label for="seating">Seating Preference</label>
+                                <select id="seating" name="seating">
+                                    <option value="">No preference</option>
+                                    <option value="window">Window Table</option>
+                                    <option value="private">Private Booth</option>
+                                    <option value="bar">Bar Seating</option>
+                                    <option value="terrace">Terrace (Weather Permitting)</option>
+                                    <option value="quiet">Quiet Area</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="requests">Special Requests & Dietary Requirements</label>
+                                <textarea id="requests" name="requests" placeholder="Please let us know about any allergies, dietary restrictions, special accommodations, or any other requests to make your evening perfect..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Confirm Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>🎉 Reservation Confirmed!</h3>
+            <p>Thank you for choosing Black Moon Cafe! Your reservation has been successfully submitted.</p>
+            <p>We will contact you within 15 minutes to confirm your table and discuss any special arrangements.</p>
+            <p style="color: #ffd700; font-weight: 600;">Confirmation details have been sent to your email</p>
+        </div>
+    </div>
+
+    </body>
+</html>
