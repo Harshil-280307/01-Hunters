@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Moon Cafe - Special Offers</title>
+    <link href="offer.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <nav class="navbar-alt">
+        <div class="nav-container">
+            <a href="#home" class="logo-container">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <h1 class="logo-title">BLACK MOON</h1>
+                    <p class="logo-subtitle">CAFE & BISTRO</p>
+                </div>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="#drinks" class="dropdown-item">Coffee & Drinks</a>
+                        <a href="#food" class="dropdown-item">Fast Food</a>
+                        <a href="#desserts" class="dropdown-item">Desserts</a>
+                        <a href="#specials" class="dropdown-item">Daily Specials</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#reservation" class="nav-link">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#offers" class="nav-link">Offers</a>
+                </li>
+                <li class="nav-item">
+                    <button class="cta-button">Order Now</button>
+                </li>
+            </ul>
+            
+            
+        </div>
+    </nav>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="wave"></div>
+    <div class="stars"></div>
+    <div class="golden-particles"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                BLACK <span class="moon"></span> MOON CAFE
+            </div>
+            <div class="tagline">Where Night Meets Delight</div>
+        </header>
+
+        <div class="offers-grid">
+
+            <div class="offer-card">
+                <div class="golden-shimmer"></div>
+                <div class="offer-title">Midnight Special</div>
+                <div class="offer-description">
+                    Enjoy our signature dark roast coffee with a selection of artisanal pastries. 
+                    Perfect for late-night study sessions or intimate conversations under the stars.
+                </div>
+                <div class="offer-price">$12.99</div>
+                <div class="offer-duration">Available 9PM - 12AM</div>
+                <button class="cta-button">Order Now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="golden-shimmer"></div>
+                <div class="offer-title">Lunar Lunch Deal</div>
+                <div class="offer-description">
+                    A cosmic combination of our moon-blessed sandwich, celestial soup, 
+                    and your choice of stellar beverage.
+                </div>
+                <div class="offer-price">$16.50</div>
+                <div class="offer-duration">Monday - Friday, 11AM - 3PM</div>
+                <button class="cta-button">Discover More</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="golden-shimmer"></div>
+                <div class="offer-title">Stargazer's Delight</div>
+                <div class="offer-description">
+                    Premium coffee blends from around the world, served with constellation cookies. 
+                    Each sip takes you on a journey through the universe.
+                </div>
+                <div class="offer-price">$19.99</div>
+                <div class="offer-duration">Weekend Special</div>
+                <button class="cta-button">Explore</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="golden-shimmer"></div>
+                <div class="offer-title">Eclipse Breakfast</div>
+                <div class="offer-description">
+                    Start your day with our cosmic breakfast platter featuring galaxy pancakes, 
+                    nebula smoothie, and meteor muffins.
+                </div>
+                <div class="offer-price">$14.75</div>
+                <div class="offer-duration">Daily 6AM - 11AM</div>
+                <button class="cta-button">Wake Up</button>
+            </div>
+        </div>
+
+        <div class="menu-preview">
+            <div class="menu-title">Featured Cosmic Creations</div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-name">Moonbeam Latte</div>
+                    <div class="item-price">$6.50</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Galactic Cheesecake</div>
+                    <div class="item-price">$8.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Stellar Sandwich</div>
+                    <div class="item-price">$11.25</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Cosmic Cappuccino</div>
+                    <div class="item-price">$5.75</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="contact-info">📍 123 Celestial Street, Moonlight City</div>
+            <div class="contact-info">☎️ (555) MOON-CAFE</div>
+            <div class="contact-info">✉️ hello@blackmooncafe.com</div>
+        </footer>
+    </div>
+
+    <script>
+        // Create twinkling stars
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            const numberOfStars = 100;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create golden particles
+        function createGoldenParticles() {
+            const particlesContainer = document.querySelector('.golden-particles');
+            const numberOfParticles = 20;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'golden-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Add click effects to buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                }, 150);
+            });
+        });
+
+        // Initialize stars and particles when page loads
+        createStars();
+        createGoldenParticles();
+    </script>
+</body>
+</html>
