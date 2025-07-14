@@ -277,13 +277,13 @@ body::before {
     font-size: 1.8rem;
     font-weight: 700;
     color: #FFD700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); */
-/* } */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
 .menu-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
     color: #ffffff;
-}
+} */
 /* Main Container */
 .container {
     max-width: 1200px;
@@ -293,7 +293,7 @@ body::before {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 5rem 0;
+    padding: 4rem 0;
     margin-bottom: 3rem;
 }
 .hero h1 {
@@ -398,7 +398,7 @@ body::before {
 }
 .item-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 0.7rem;
     color: #ffffff;
     margin-bottom: 0.5rem;
     font-weight: 600;
