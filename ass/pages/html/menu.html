@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Moon Café - Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .menu-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Menu Categories */
+        .menu-category {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .menu-category:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .menu-category:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .menu-item:hover::before {
+            left: 100%;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            float: left;
+            margin-right: 1rem;
+            border: 3px solid rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover .item-image {
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .item-content {
+            overflow: hidden;
+        }
+
+        .item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .item-price {
+            font-size: 1.2rem;
+            color: #FFD700;
+            font-weight: 600;
+            float: right;
+            margin-top: -2rem;
+        }
+
+        .item-description {
+            color: #cccccc;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            clear: both;
+        }
+
+        /* Special Cards */
+        .special-card {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(255, 215, 0, 0.1));
+            border: 2px solid rgba(138, 43, 226, 0.5);
+        }
+
+        .special-card:hover {
+            box-shadow: 0 15px 40px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 10, 0.8);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #FFD700;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .category-title {
+                font-size: 2rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .menu-title {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .menu-item {
+                padding: 1rem;
+            }
+
+            .item-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">🌙 Black Moon Café</div>
+            <div class="menu-title">Our Delicious Menu</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Discover Our Cosmic Menu</h1>
+            <p>Experience flavors from another world at Black Moon Café</p>
+        </section>
+
+        <!-- Coffee Section -->
+        <section class="menu-category">
+            <div class="category-header">
+                <h2 class="category-title">☕ Coffee</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e76?w=200&h=200&fit=crop&crop=center" alt="Espresso" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Espresso Moonshot</h3>
+                        <span class="item-price">₹199</span>
+                        <p class="item-description">Rich, bold espresso with a cosmic kick to start your day</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&h=200&fit=crop&crop=center" alt="Latte" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Midnight Latte</h3>
+                        <span class="item-price">₹229</span>
+                        <p class="item-description">Smooth latte with velvety steamed milk and dark roast</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=200&h=200&fit=crop&crop=center" alt="Cappuccino" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Black Moon Cappuccino</h3>
+                        <span class="item-price">₹249</span>
+                        <p class="item-description">Perfect balance of espresso, steamed milk, and foam</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=200&h=200&fit=crop&crop=center" alt="Cold Brew" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Cold Brew Eclipse</h3>
+                        <span class="item-price">₹279</span>
+                        <p class="item-description">Smooth, refreshing cold brew with a mysterious dark twist</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=200&fit=crop&crop=center" alt="Macchiato" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Caramel Macchiato Glow</h3>
+                        <span class="item-price">₹299</span>
+                        <p class="item-description">Sweet caramel macchiato with a golden celestial glow</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teas & Smoothies Section -->
+        <section class="menu-category">
+            <div class="category-header">
+                <h2 class="category-title">🍵 Teas & Smoothies</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=200&h=200&fit=crop&crop=center" alt="Green Tea" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Green Tea Nebula</h3>
+                        <span class="item-price">₹149</span>
+                        <p class="item-description">Refreshing green tea with cosmic health benefits</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=200&h=200&fit=crop&crop=center" alt="Smoothie" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Starry Night Smoothie</h3>
+                        <span class="item-price">₹249</span>
+                        <p class="item-description">Blueberry and banana smoothie with a starry twist</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1587080266227-677cc2049d2b?w=200&h=200&fit=crop&crop=center" alt="Berry Tea" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Blueberry Burst Tea</h3>
+                        <span class="item-price">₹199</span>
+                        <p class="item-description">Fruity tea blend with bursting blueberry flavors</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=200&h=200&fit=crop&crop=center" alt="Mint Smoothie" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Minty Chill Smoothie</h3>
+                        <span class="item-price">₹199</span>
+                        <p class="item-description">Cool and refreshing mint smoothie for hot days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mocktails Section -->
+        <section class="menu-category">
+            <div class="category-header">
+                <h2 class="category-title">🍹 Mocktails</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&crop=center" alt="Mojito" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Cosmic Mojito</h3>
+                        <span class="item-price">₹249</span>
+                        <p class="item-description">Classic mojito with a galactic mint and lime twist</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1437418747212-8d9709afab22?w=200&h=200&fit=crop&crop=center" alt="Tropical Drink" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Tropical Starburst</h3>
+                        <span class="item-price">₹299</span>
+                        <p class="item-description">Exotic tropical fruits in a stellar mocktail</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=200&h=200&fit=crop&crop=center" alt="Sunset Drink" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Sunset Splash</h3>
+                        <span class="item-price">₹249</span>
+                        <p class="item-description">Orange and pink layers creating a beautiful sunset</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1536533983886-bce6d5e7ffc0?w=200&h=200&fit=crop&crop=center" alt="Berry Punch" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Dark Berry Punch</h3>
+                        <span class="item-price">₹299</span>
+                        <p class="item-description">Rich berry punch with mysterious dark fruits</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fast Foods Section -->
+        <section class="menu-category">
+            <div class="category-header">
+                <h2 class="category-title">🍔 Fast Foods</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop&crop=center" alt="Burger" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Galactic Burger</h3>
+                        <span class="item-price">₹349</span>
+                        <p class="item-description">Juicy burger with cosmic flavors and stellar toppings</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=200&h=200&fit=crop&crop=center" alt="Fries" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Cheesy Fries Galaxy</h3>
+                        <span class="item-price">₹199</span>
+                        <p class="item-description">Crispy fries topped with melted cheese from the stars</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&h=200&fit=crop&crop=center" alt="Pizza" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Cosmic Pizza (Veg/Non-Veg)</h3>
+                        <span class="item-price">₹499</span>
+                        <p class="item-description">Delicious pizza with cosmic toppings of your choice</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=200&fit=crop&crop=center" alt="Wrap" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Midnight Wrap</h3>
+                        <span class="item-price">₹299</span>
+                        <p class="item-description">Wrapped with fresh ingredients and midnight spices</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts Section -->
+        <section class="menu-category">
+            <div class="category-header">
+                <h2 class="category-title">🍰 Desserts</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=200&h=200&fit=crop&crop=center" alt="Lava Cake" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Choco Lava Cake</h3>
+                        <span class="item-price">₹299</span>
+                        <p class="item-description">Warm chocolate cake with molten center like a volcano</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200&h=200&fit=crop&crop=center" alt="Donuts" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Galaxy Donuts</h3>
+                        <span class="item-price">₹249</span>
+                        <p class="item-description">Colorful donuts with galaxy-inspired glazes</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200&h=200&fit=crop&crop=center" alt="Ice Cream" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Vanilla Stardust Ice Cream</h3>
+                        <span class="item-price">₹199</span>
+                        <p class="item-description">Creamy vanilla ice cream with edible stardust</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specials Section -->
+        <section class="menu-category">
+            <div class="category-header">
+                <h2 class="category-title">🌟 Specials</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item special-card">
+                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=200&h=200&fit=crop&crop=center" alt="Combo Meal" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Black Moon Combo Meal</h3>
+                        <span class="item-price">₹799</span>
+                        <p class="item-description">Perfect combination of burger, fries, drink, and dessert</p>
+                    </div>
+                </div>
+                <div class="menu-item special-card">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&h=200&fit=crop&crop=center" alt="Friends Pack" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Friends Pack</h3>
+                        <span class="item-price">₹999</span>
+                        <p class="item-description">2 Burgers, 2 Mojitos, Fries - perfect for sharing</p>
+                    </div>
+                </div>
+                <div class="menu-item special-card">
+                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=200&h=200&fit=crop&crop=center" alt="Late Night Pack" class="item-image">
+                    <div class="item-content">
+                        <h3 class="item-name">Late Night Cravings Pack</h3>
+                        <span class="item-price">₹1199</span>
+                        <p class="item-description">Ultimate pack for midnight cravings with all favorites</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Black Moon Café. All rights reserved.</p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll animation for menu categories
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.menu-category').forEach(category => {
+            observer.observe(category);
+        });
+
+        // Add stagger animation to menu items
+        document.querySelectorAll('.menu-item').forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
