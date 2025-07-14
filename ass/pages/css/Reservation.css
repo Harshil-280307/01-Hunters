@@ -836,3 +836,95 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+
+        
+  /* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+    .footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-left: 3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            margin-left: 3rem;
+            color: #aaaaaa;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666666;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .floating-elements {
+                display: none;
+            }
+        }
+
+        .social-links {
+            margin-left: 43rem;
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            /* margin-left: 1%; */
+            width: 35px;
+            height: 35px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .social-link:hover {
+            background: #d4af37;
+        }
+        
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: #e0e0e0;
+        }
+        
+        .social-link:hover svg {
+            fill: #1a1a1a;
+        }
+
