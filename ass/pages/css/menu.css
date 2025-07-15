@@ -7,7 +7,7 @@
         radial-gradient(circle at 60% 30%, rgba(75, 0, 130, 0.3) 0%, transparent 70%),
         linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
     padding: 1.5rem 0;
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -71,7 +71,7 @@
 
 .logo-title,
 .navbar-alt .logo-title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin: 0;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -103,7 +103,7 @@
 .navbar-alt .nav-link {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     padding: 0.9rem 0.5rem;
     border-radius: 8px;
@@ -223,8 +223,7 @@
             background: linear-gradient(45deg, #f59e0b, #d97706);
         }
 
-
-        /* ------------------------------------------------------------------------------------------------------ */
+/* ............................................................................................................................................ */
 
 
 
@@ -254,36 +253,7 @@ body::before {
         radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
     z-index: -1;
 }
-/* Header */
-/* .header {
-    position: sticky;
-    top: 0;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-}
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #FFD700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-.menu-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #ffffff;
-} */
+
 /* Main Container */
 .container {
     max-width: 1200px;
