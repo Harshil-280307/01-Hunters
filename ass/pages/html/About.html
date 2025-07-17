@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Black Moon</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  
+</head>
+<body>
+
+  <nav class="navbar-alt">
+        <div class="nav-container">
+            <a href="#home" class="logo-container">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <h1 class="logo-title">BLACK MOON</h1>
+                    <p class="logo-subtitle">CAFE & BISTRO</p>
+                </div>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="#drinks" class="dropdown-item">Coffee & Drinks</a>
+                        <a href="#food" class="dropdown-item">Fast Food</a>
+                        <a href="#desserts" class="dropdown-item">Desserts</a>
+                        <a href="#specials" class="dropdown-item">Daily Specials</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#reservation" class="nav-link">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#offers" class="nav-link">Offers</a>
+                </li>
+                <li class="nav-item">
+                    <button class="cta-button">Order Now</button>
+                </li>
+            </ul>
+            
+            <!-- <button class="mobile-menu-toggle" id="mobile-toggle">☰</button> -->
+        </div>
+    </nav> 
+
+
+
+  <section id="about">
+    <h2>About Black Moon</h2>
+
+    <div class="about-block">
+      <h3>🌙 Our Story</h3>
+      <p>Black Moon Café was born under starlit skies — a space where coffee, mystery, and night owls harmonize. We've been serving soulful brews since 2020.</p>
+    </div>
+
+    <div class="about-block">
+      <h3>🚀 Our Mission</h3>
+      <p>To craft coffee that awakens your senses and moments that linger — blending bold flavors with celestial ambiance.</p>
+    </div>
+
+    <div class="about-block">
+      <h3>✨ What Makes Us Unique</h3>
+      <p>We infuse each cup with character: from lunar-inspired drinks to midnight pastries and cosmic decor, we serve more than just coffee.</p>
+    </div>
+
+    <div class="about-block">
+      <h3>🌌 Community & Culture</h3>
+      <p>We're a hub for creatives, students, thinkers, and wanderers — fostering a culture of connection, curiosity, and comfort.</p>
+    </div>
+
+    <div class="review-block">
+  <h3>📝 Give Your Honest Feedback</h3>
+  <textarea id="reviewInput" placeholder="Share your thoughts about your experience at Black Moon..."></textarea>
+  <br>
+  <button type="button" onclick="submitReview()">Submit</button>
+  <p id="reviewMessage" style="color: #4caf50; font-weight: bold; margin-top: 1rem; display: none;">
+    ✅ Thank you for your feedback!
+  </p>
+</div>
+
+<script>
+  function submitReview() {
+    const input = document.getElementById('reviewInput');
+    const message = document.getElementById('reviewMessage');
+
+    if (input.value.trim() !== "") {
+      message.style.display = "block";
+      input.value = ""; // Clear the textarea
+    } else {
+      message.style.display = "none";
+    }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const section = document.querySelector('#about');
+  if (section) observer.observe(section);
+</script>
+
+</body>
+</html>
