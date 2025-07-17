@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Moon Café - Offers</title>
     <style>
+
+        
+
         * {
             margin: 0;
             padding: 0;
@@ -25,35 +28,7 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #d4af37;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #d4af37;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
-
-        .moon-icon {
-            font-size: 1.5rem;
-            margin-right: 10px;
-        }
+    
 
         /* Hero Section */
         .hero {
@@ -403,15 +378,52 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="moon-icon">🌙</span>Black Moon Café
+
+     <nav class="navbar-alt">
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <h1 class="logo-title">BLACK MOON</h1>
+                    <p class="logo-subtitle">CAFE & BISTRO</p>
                 </div>
-            </div>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="./ass/pages/html/menu.html" class="nav-link">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="./ass/pages/html/menu.html#coffee" class="dropdown-item">Coffee & Drinks</a>
+                        <a href="./ass/pages/html/menu.html#FastFoods" class="dropdown-item">Fast Food</a>
+                        <a href="./ass/pages/html/menu.html#Desserts" class="dropdown-item">Desserts</a>
+                        <a href="./ass/pages/html/menu.html#specials" class="dropdown-item">Daily Specials</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="./ass/pages/html/Reservation.html" class="nav-link">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./ass/pages/html/offer.html" class="nav-link">Offers</a>
+                </li>
+                <li class="nav-item">
+                    <button class="cta-button">Order Now</button>
+                </li>
+            </ul>
+            
+            <!-- From Uiverse.io by RiccardoRapelli  -->
         </div>
-    </header>
+    </nav> 
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
 
     <section class="hero">
         <div class="hero-content">
