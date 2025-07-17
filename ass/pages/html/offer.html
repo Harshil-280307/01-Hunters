@@ -3,235 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ass/pages/css/nav.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <title>Black Moon Café - Offers</title>
     <style>
-
-             /* Navigation */
-        
-.navbar,
-.navbar-alt {
-    background:
-        radial-gradient(circle at 20% 50%, rgba(26, 26, 46, 0.8) 0%, transparent 70%),
-        radial-gradient(circle at 80% 20%, rgba(22, 33, 62, 0.8) 0%, transparent 70%),
-        radial-gradient(circle at 40% 80%, rgba(15, 52, 96, 0.8) 0%, transparent 70%),
-        radial-gradient(circle at 60% 30%, rgba(75, 0, 130, 0.3) 0%, transparent 70%),
-        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-    padding: 1.5rem 0;
-    position: relative;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    border-bottom: 3px solid #fbbf24;
-}
-
-.nav-container,
-.navbar-alt .nav-container {
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 rem;
-}
-
-.logo-container,
-.navbar-alt .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    text-decoration: none;
-}
-
-.logo-icon,
-.navbar-alt .logo-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
-    transition: all 0.3s ease;
-}
-
-.logo-icon::before,
-.navbar-alt .logo-icon::before {
-    content: '🌙';
-    font-size: 1.7rem;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
-}
-
-.logo-icon:hover,
-.navbar-alt .logo-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
-}
-
-.logo-text,
-.navbar-alt .logo-text {
-    text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff,
-        0 0 0px #fff;
-    color: #ffffff;
-}
-
-.logo-title,
-.navbar-alt .logo-title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.logo-subtitle,
-.navbar-alt .logo-subtitle {
-    font-size: 0.9rem;
-    color: #fbbf24;
-    margin: 0;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-.nav-menu,
-.navbar-alt .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 3rem;
-    align-items: center;
-}
-
-.nav-item,
-.navbar-alt .nav-item {
-    position: relative;
-}
-
-.nav-link,
-.navbar-alt .nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.9rem 0.5rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(251, 191, 36, 0.2);
-}
-
-.nav-link::after,
-.navbar-alt .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #fbbf24;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-link:hover,
-.navbar-alt .nav-link:hover {
-    text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff,
-        0 0 0px #fff;
-    background: #fbbf24;
-    border-color: #fbbf24;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
-}
-
-.nav-link:hover::after,
-.navbar-alt .nav-link:hover::after {
-    width: 100%;
-}
-
-/* Dropdown styles */
-.dropdown,
-.navbar-alt .dropdown {
-    position: relative;
-}
-
-.dropdown-content,
-.navbar-alt .dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    background: #1e3a8a;
-    min-width: 200px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
-    padding: 1rem 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    border: 2px solid #fbbf24;
-    margin-top: 1rem;
-}
-
-.dropdown:hover .dropdown-content,
-.navbar-alt .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-.dropdown-item,
-.navbar-alt .dropdown-item {
-    display: block;
-    padding: 0.8rem 1.5rem;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.05);
-    margin: 0.2rem 0.5rem;
-    border-radius: 6px;
-    border-left: 3px solid transparent;
-}
-
-.dropdown-item:hover,
-.navbar-alt .dropdown-item:hover {
-    text-shadow: 0 0 5px #fff,
-        0 0 0px #fff,
-        0 0 0px #fff;
-    background: #fbbf24;
-    color: #0a0a0a;
-    border-left-color: #fbbf24;
-    transform: translateX(3px);
-}
-
-.cta-button {
-            background: linear-gradient(45deg, #fbbf24, #f59e0b);
-            color: #1e3a8a;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
-        }
-
-        .cta-button:hover {
-            text-shadow: 0 0 5px #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
-            background: linear-gradient(45deg, #f59e0b, #d97706);
-        }
 
 /* ............................................................................................................................................ */
 
@@ -660,9 +435,10 @@
 </head>
 <body>
 
+
     <nav class="navbar-alt">
         <div class="nav-container">
-            <a href="../../../index.html" class="logo-container">
+            <a href="index.html" class="logo-container">
                 <div class="logo-icon"></div>
                 <div class="logo-text">
                     <h1 class="logo-title">BLACK MOON</h1>
@@ -670,39 +446,98 @@
                 </div>
             </a>
             
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="../../../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="./ass/pages/html/About.html" class="nav-link">About Us</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="menu.html" class="nav-link">Menu</a>
+                <li class="nav-item dropdown" id="menu-dropdown">
+                    <a href="./ass/pages/html/menu.html" class="nav-link">Menu</a>
                     <div class="dropdown-content">
-                        <a href="menu.html#coffee" class="dropdown-item">Coffee & Drinks</a>
-                        <a href="menu.html#FastFoods" class="dropdown-item">Fast Food</a>
-                        <a href="menu.html#Desserts" class="dropdown-item">Desserts</a>
-                        <a href="menu.html#specials" class="dropdown-item">Daily Specials</a>
+                        <a href="./ass/pages/html/menu.html#coffee" class="dropdown-item">Coffee & Drinks</a>
+                        <a href="./ass/pages/html/menu.html#FastFoods" class="dropdown-item">Fast Food</a>
+                        <a href="./ass/pages/html/menu.html#Desserts" class="dropdown-item">Desserts</a>
+                        <a href="./ass/pages/html/menu.html#specials" class="dropdown-item">Daily Specials</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="Reservation.html" class="nav-link">Reservation</a>
+                    <a href="./ass/pages/html/Reservation.html" class="nav-link">Reservation</a>
                 </li>
                 <li class="nav-item">
-                    <a href="offer.html" class="nav-link">Offers</a>
+                    <a href="./ass/pages/html/offer.html" class="nav-link">Offers</a>
                 </li>
                 <li class="nav-item">
                     <button class="cta-button">Order Now</button>
                 </li>
             </ul>
-            
-            <!-- From Uiverse.io by RiccardoRapelli  -->
         </div>
-    </nav> 
+    </nav>
+
+    
+    <script>
+        // Mobile menu toggle functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const menuDropdown = document.getElementById('menu-dropdown');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on nav links (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Handle mobile dropdown menu
+        if (window.innerWidth <= 768) {
+            menuDropdown.addEventListener('click', (e) => {
+                if (e.target.classList.contains('nav-link')) {
+                    e.preventDefault();
+                    menuDropdown.classList.toggle('active');
+                }
+            });
+        }
+
+        // Close menu when clicking outside (mobile)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && 
+                !navMenu.contains(e.target) && 
+                !hamburger.contains(e.target) &&
+                navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuDropdown.classList.remove('active');
+            }
+        });
+    </script>
 
 
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- From Uiverse.io by RiccardoRapelli  -->
+
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 

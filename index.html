@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./ass/pages/css/home.css">
+    <link rel="stylesheet" href="./ass/pages/css/nav.css">
     <title>Black Moon Cafe - Home</title>
 </head>
 <body>
+
     
+
     <nav class="navbar-alt">
         <div class="nav-container">
             <a href="index.html" class="logo-container">
@@ -18,6 +21,12 @@
                 </div>
             </a>
             
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
@@ -25,7 +34,7 @@
                 <li class="nav-item">
                     <a href="./ass/pages/html/About.html" class="nav-link">About Us</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="menu-dropdown">
                     <a href="./ass/pages/html/menu.html" class="nav-link">Menu</a>
                     <div class="dropdown-content">
                         <a href="./ass/pages/html/menu.html#coffee" class="dropdown-item">Coffee & Drinks</a>
@@ -44,13 +53,66 @@
                     <button class="cta-button">Order Now</button>
                 </li>
             </ul>
-            
-            <!-- From Uiverse.io by RiccardoRapelli  -->
         </div>
-    </nav> 
+    </nav>
+
+    
+    <script>
+        // Mobile menu toggle functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const menuDropdown = document.getElementById('menu-dropdown');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on nav links (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Handle mobile dropdown menu
+        if (window.innerWidth <= 768) {
+            menuDropdown.addEventListener('click', (e) => {
+                if (e.target.classList.contains('nav-link')) {
+                    e.preventDefault();
+                    menuDropdown.classList.toggle('active');
+                }
+            });
+        }
+
+        // Close menu when clicking outside (mobile)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && 
+                !navMenu.contains(e.target) && 
+                !hamburger.contains(e.target) &&
+                navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuDropdown.classList.remove('active');
+            }
+        });
+    </script>
 
 
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- From Uiverse.io by RiccardoRapelli  -->
+
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
     <section id="home" class="hero">
         <div class="slideshow-wrapper">
