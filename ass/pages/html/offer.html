@@ -424,20 +424,24 @@
         <div class="container">
             <h2 class="section-title">🌟 Enchanted Offers</h2>
             
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="../../../index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="About.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="menu.html" class="nav-link">Menu</a>
-                    <div class="dropdown-content">
-                        <a href="menu.html#coffee" class="dropdown-item">Coffee & Drinks</a>
-                        <a href="menu.html#FastFoods" class="dropdown-item">Fast Food</a>
-                        <a href="menu.html#desserts" class="dropdown-item">Desserts</a>
-                        <a href="menu.html#specials" class="dropdown-item">Daily Specials</a>
+            <div class="offers-grid">
+                <!-- Daily Offers -->
+                <div class="offer-card" data-offer="daily">
+                    <span class="offer-icon">🔥</span>
+                    <h3 class="offer-title">☕ Midnight Brew Deal</h3>
+                    <p class="offer-description">Get a free croissant with every large cappuccino – only till 3 PM today!</p>
+                    <div class="timer" id="dailyTimer">
+                        <div>⏰ Expires in: <span id="countdown">00:00:00</span></div>
+                    </div>
+                    <button class="claim-btn" onclick="expandOffer('daily')">Claim Offer</button>
+                    <div class="expanded-details" id="dailyDetails">
+                        <p>✨ This magical deal includes:</p>
+                        <ul style="margin-left: 20px; color: #c0c0c0;">
+                            <li>One large cappuccino (any flavor)</li>
+                            <li>Fresh-baked croissant (choice of plain, almond, or chocolate)</li>
+                            <li>Valid until 3 PM today only</li>
+                            <li>Cannot be combined with other offers</li>
+                        </ul>
                     </div>
                 </div>
 
