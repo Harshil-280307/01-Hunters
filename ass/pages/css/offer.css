@@ -338,68 +338,7 @@
             }
         }
 
-        .social-links {
-            margin-left: 43rem;
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-link {
-            /* margin-left: 1%; */
-            width: 35px;
-            height: 35px;
-            background: #333;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .social-link:hover {
-            background: #d4af37;
-        }
-        
-        .social-link svg {
-            width: 18px;
-            height: 18px;
-            fill: #e0e0e0;
-        }
-        
-        .social-link:hover svg {
-            fill: #1a1a1a;
-        }
-
-        .social-links a {
-            font-size: 1.5rem;
-            padding: 10px;
-            border-radius: 50%;
-            background: rgba(212, 175, 55, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: #d4af37;
-            color: #1a1a1a;
-            transform: scale(1.1);
-        }
-
-        .expanded-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .expanded-details.active {
-            max-height: 300px;
-            padding: 20px;
-        }
-
+    
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
